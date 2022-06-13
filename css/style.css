@@ -29,7 +29,15 @@ ul li a {
 	letter-spacing: 2px;
 }
 
-h1, h2, h3 {
+ul li a.active {
+	color: white;
+	background: #0ab36f;
+	border: none;
+}
+
+h1,
+h2,
+h3 {
 	font-family: 'Playfair Display';
 	font-weight: 900;
 }
@@ -50,7 +58,7 @@ h2 {
 	position: relative;
 	top: -120px;
 	right: -10px;
-	background:  #FF4338;
+	background: #FF4338;
 	color: white;
 	letter-spacing: 5px;
 }
@@ -65,7 +73,7 @@ p {
 	font-family: monospace;
 	font-size: 1.5em;
 	line-height: 1.4;
-	color: rgba(0,0,0,.7);
+	color: rgba(0, 0, 0, .7);
 	margin-bottom: 40px;
 }
 
@@ -118,7 +126,24 @@ img {
 	width: 100%;
 }
 
-.item-info > div {
+.item-info>div {
 	width: 50%;
 	float: left;
+}
+
+.item {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	transform: translate3d(-50px, 0, 0);
+}
+
+.item.active {
+	opacity: 1;
+	visibility: visible;
+	position: relative;
+	top: auto;
+	transition: .4s;
+	transform: translate3d(0, 0, 0);
 }
